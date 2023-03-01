@@ -2,53 +2,55 @@
 /*                                     --> Geral <--                                     */
 :root{
     --textcolor1: rgb(83, 83, 83);
+    --bkg1: linear-gradient(to bottom, white, rgb(241, 236, 236));
 }
-
 *{
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
 }
-
 body{
+    width: 100%;
     margin: 0;
 }
-
-
 /*                                     --> Header <--                                     */
 header{
-    width: 100%;
-    max-width: 100%;
     margin-top: 1%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-}
-
-/*                   --> Menu <--                   */
-#menu{
     margin-left: 10%;
     height: 5.5em;
     max-height: 10%;
     width: 80%;
     max-width: 80%;
-    background-color: whitesmoke;
+    
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     align-items: center;
     align-content: center;
     justify-content: space-around;
-    gap: 5px;
+    position: fixed;
+
+    background-color: whitesmoke;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.100), 0px -2px 2px rgba(0, 0, 0, 0.100);
     border-radius: 2px;
 }
-#menu div{
+.logomarca{
     flex-basis: 40%;
     display: flex;
     align-items: center;
     align-content: center;
+}
+/*                   --> Menu <--                   */
+
+#menu{
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    width: 40%;
+    gap: 5px;
+    
 }
 #menu a{
     text-align: center;
@@ -61,18 +63,19 @@ header{
     justify-content: space-around;
 
     height: 65%;
-    width: 8%;
+    width: 20%;
     border-radius: 3px;
 }
 #menu a:hover{
-    background-color: maroon;
+    background-color: rgb(49, 13, 34);
     color: white;
 }
-
 /*                                     --> Main <--                                     */
 main{
     width: 100%;
+    padding: 0;
     margin: 0;
+    gap: 0;
 }
 .container{
     display: flex;
@@ -84,11 +87,21 @@ main{
     column-gap: 30px;
     width: 100%;
     max-width: 100%;
+    margin: 0;
+}
+h2{
+    margin-top: 3em;
 }
 /*                  --> Home <--                  */
+#home{
+    width: 100%;
+    margin: 0;
+    gap: 0;
+}
 #home .container{
     background-image: url("images/hotel.jpg");
     background-size: cover;
+    margin: 0;
     width: 100%;
     height: 90dvh;
 }
@@ -98,15 +111,19 @@ main{
     width: 80%;
 }
 /*                  --> Quartos <--                  */
-
-#quartos h2{
-    margin-top: 5em;
+#quartos{
+    width: 100%;
+    margin: 0;
+    gap: 0;
+    background: var(--bkg1);
+    padding-bottom: 15px;
 }
 #quartos .bloco-de-imagens{
     overflow: hidden;
     width: 100%;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     flex: 1;
+    margin: 0;
     margin-top: 10em;
     justify-content: center;
 }
@@ -114,53 +131,153 @@ main{
     overflow: hidden;
     flex-direction: column;
     row-gap: 0;
-    width: 35%;
-    max-width: 35%;
+    width: 600px;
+    max-width: 600px;
+    height: auto;
 }
-#quartos .descricao{
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    width: 100%;
-    max-width: 100%;
-    height: 4em;
-}
-#quartos .descricao img{
-    display: flex;
-    width: 15%;
-    height: 100%;
-}
-#quartos .imagem{
-    border: none;
-    width: 100%;
-    max-width: 100%;
-    height: 350px;
-}
-#quartos .imagem img{
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
 #quartos .bloco-de-imagens:nth-child(1){ column-gap: 4em;}
 #quartos .bloco-de-imagens:nth-child(2){ column-gap: 10%;}
-
-
 #quartos .bloco-da-imagem2{
     flex-direction: column;
-    width: 22%;
+    width: 340px;
     max-width: 100%;
     height: auto;
     row-gap: 0;
 }
 #quartos .bloco-da-imagem2 .imagem{
+    width: 340px;
+    max-width: 100%;
+    height: auto;
+}
+.imagem{
+    border: none;
+    width: 600px;
+    max-width: 100%;
+    height: 350px;
+}
+#quartos .legenda{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
     width: 100%;
     max-width: 100%;
-    height: 240px;
+    height: 4em;
+    background-color: rgb(216, 216, 216);
 }
-#quartos .descricao h3{
-    margin-top: 15px;    
+#quartos .legenda img{
+    display: flex;
+    width: 13%;
+    height: 100%;
+    object-fit: cover;
+}
+#quartos .imagem img{
+    display: flex;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+#quartos .legenda .h3, #quartos .legenda p{
+    width: auto;
+    height: auto;
+    margin-left: 15px; 
+    margin-bottom: 2px;   
+    font-size: medium;
+}
+.legenda div{
+    padding: 2px;
+    margin: auto;
 }
 
+/*                  --> Serviços <--                  */
+#servicos{
+    background: var(--bkg1);
+    padding-bottom: 5em;
+}
+#servicos .bloco-de-imagens{
+    display: flex;
+    flex-flow: row wrap;
+}
+#servicos .bloco-da-imagem{
+    overflow: hidden;
+    width: 340px;
+    flex-flow: row nowrap;
+    margin-top: 10em;
+    justify-content: center;
+}
+#servicos .legenda{
+    display: flex;
+    flex-direction: column  ;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    row-gap: 15px;
+}
+#servicos .legenda a{
+    background-color: rgb(49, 13, 34);
+    color: white;
+    padding: 10px;
+    font-size: 1.3em;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#servicos .legenda a:hover{
+    background-color: rgb(77, 1, 1);
+}
+#servicos .imagem{
+    margin: auto;
+    display: flex;
+    height: 240px;
+    width: 240px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+#servicos .imagem img{
+    display: flex;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: inset 1px rgb(95, 29, 45);    
+}
+#servicos .legenda .h3, #servicos .legenda p{
+    width: auto;
+    height: auto;
+    margin autos
+    font-size: medium;
+}
+
+
+footer{
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    background: rgb(49, 13, 34); 
+    color: white;
+}
+footer .bloco{
+    display: flex;
+    flex-flow: column wrap;
+    
+    width: 500px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+footer p{
+    margin: 0;
+    margin-top: 1em;
+    width: 70%;
+}
+footer h2{
+    margin: 0;
+}
